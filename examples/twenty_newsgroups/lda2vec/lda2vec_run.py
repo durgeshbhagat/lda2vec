@@ -88,7 +88,8 @@ j = 0
 epoch = 0
 fraction = batchsize * 1.0 / flattened.shape[0]
 progress = shelve.open('progress.shelve')
-for epoch in range(200):
+no_of_epoch = 10
+for epoch in range(10):
     data = topics.prepare_topics(cuda.to_cpu(model.mixture.weights.W.data).copy(),
                           cuda.to_cpu(model.mixture.factors.W.data).copy(),
                           cuda.to_cpu(model.sampler.W.data).copy(),

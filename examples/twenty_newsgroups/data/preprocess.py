@@ -27,8 +27,7 @@ def clean(line):
 max_length = 10000   # Limit of 10k words per document
 # Convert to unicode (spaCy only works with unicode)
 texts = [clean(d) for d in texts]
-tokens, vocab = preprocess.tokenize(texts, max_length, merge=False,
-                                    n_threads=4)
+tokens, vocab = preprocess.tokenize(texts, max_length, merge=False, n_threads=4) # call to lda2vec preprocess.tokenize
 corpus = Corpus()
 # Make a ranked list of rare vs frequent words
 corpus.update_word_count(tokens)
